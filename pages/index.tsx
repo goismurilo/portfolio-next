@@ -6,6 +6,7 @@ import Example from '../components/Example'
 import Navbar from '../components/Navbar'
 import Landing from '../components/Landing'
 import Portfolio from '../components/Projects'
+import Experience from '../components/Experience'
 // import styles from '../styles/Home.module.css'
 
 const Home: NextPage = () => {
@@ -21,6 +22,7 @@ const Home: NextPage = () => {
       {/* //TODO
       <AddExperinceInNumvbers /> */}
       <Portfolio />
+      <Experience />
 
       <footer >
         <a

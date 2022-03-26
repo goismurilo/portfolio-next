@@ -6,10 +6,11 @@ import manchete from '../../src/images/manchete.png';
 
 export default function Projects() {
     return (
-        <div className="p-4 bg-primary-medium">
+        <div id="projects" className="p-4 bg-primary-medium">
             <h1 className="text-center font-bold text-4xl text-white">Projetos</h1>
             <div className="flex flex-wrap justify-center">
 
+                {/* // TODO -> Create Component children Projects */}
                 <div className="w-64 bg-violet-200 p-4 rounded-lg mt-4 mr-2">
                     <Image src={acessaBR} height={230} width={400} alt="" />
                     <strong>AcessaBR</strong>
@@ -35,7 +36,7 @@ export default function Projects() {
                     <Image src={manchete} height={230} width={400} alt="" />
                     <strong>MancheteFlix</strong>
                     <p className='py-2 h-40'>Esse projeto tem o intuito de revitalizar a
-                        antiga TV Manchete e simular como seria um streaming de video nos dias
+                        antiga TV Manchete e simular como seria um streaming de video da nos dias
                         atuais.</p>
                     <span className='py-2 px-8 my-4 rounded-lg bg-second-dark hover:opacity-75 text-white flex justify-center'>
                         <a className="align-middle-text " href="https://github.com/goismurilo/clone-netflix">Ver Projeto</a>
