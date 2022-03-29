@@ -16,7 +16,7 @@ const Home: NextPage = () => {
       <Head>
         <title>Murilo Gois</title>
         <meta name="description" content="Portfolio de Murilo Gois" />
-        <link rel="icon" href="/favicon.ico" />
+        <link rel="icon" href="../public/favicon-32x32.png" />
       </Head>
       <Navbar />
       <Landing />
@@ -26,17 +26,19 @@ const Home: NextPage = () => {
       <Experience />
       <Contact />
 
-      <footer >
+      <footer className='flex flex-wrap justify-center items-center p-10'>
         <a
-          href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
+          href="https://www.linkedin.com/in/goismurilo/"
           target="_blank"
           rel="noopener noreferrer"
+          className='text-white hover:text-primary-light flex items-center'
         >
-          Powered by{' '}
+          <p>Desenvolvido por {' '}</p>
           <span>
-            <Image src="/vercel.svg" alt="Vercel Logo" width={72} height={16} />
+            <Image src="/logo-with-name.svg" alt="goisMurilo Logo" width={200} height={80} />
           </span>
         </a>
+        <p className='text-white w-screen text-center'>Copyright &copy; 2032 goisMurilo | All rights reserved.</p>
       </footer>
     </div>
   )

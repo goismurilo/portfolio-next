@@ -4,7 +4,7 @@ import { HiOutlineMail } from 'react-icons/hi';
 export default function Contact() {
 
     return (
-        <div className="bg-primary-medium pb-10 px-4">
+        <div id="contact" className="bg-primary-medium pb-10 px-4">
             <h1 className="text-center font-bold text-4xl text-white py-8">Contato</h1>
             <div className="flex flex-wrap lg:justify-center">
                 <a className="p-4 w-full md:w-auto hover:bg-primary-light rounded-md" href='https://api.whatsapp.com/send?phone=5573999768043' target="_blank" rel="noopener noreferrer">
