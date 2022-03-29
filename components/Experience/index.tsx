@@ -3,10 +3,10 @@ import xp from "../../src/images/experience.png"
 
 export default function Experience() {
     return (
-        <div id="experience" className="p-4 bg-primary-dark flex  flex-wrap justify-center">
-            <h1 className="text-center font-bold text-4xl text-white pb-8">Experiências</h1>
+        <div id="experience" className="w-screen p-4 bg-primary-dark items-center md:px-64">
+            <h1 className="text-center font-bold text-4xl text-white py-8">Experiências</h1>
             <Image
-                className='w-8 h-auto'
+                //className='self-center'
                 src={xp}
                 alt="Pequeno gráfico de experiencias" />
         </div>

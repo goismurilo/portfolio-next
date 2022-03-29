@@ -7,6 +7,7 @@ import Navbar from '../components/Navbar'
 import Landing from '../components/Landing'
 import Projects from '../components/Projects'
 import Experience from '../components/Experience'
+import Contact from '../components/Contact'
 // import styles from '../styles/Home.module.css'
 
 const Home: NextPage = () => {
@@ -23,6 +24,7 @@ const Home: NextPage = () => {
       <AddExperinceInNumvbers /> */}
       <Projects />
       <Experience />
+      <Contact />
 
       <footer >
         <a
