@@ -1,8 +1,8 @@
 import Image from "next/image";
 
-import acessaBR from "../../src/images/acessabr.png";
-import digitalCast from "../../src/images/digitalcast.png";
-import manchete from "../../src/images/manchete.png";
+import acessaBR from "../../assets/images/acessabr.png";
+import digitalCast from "../../assets/images/digitalcast.png";
+import manchete from "../../assets/images/manchete.png";
 
 export default function Projects() {
   return (

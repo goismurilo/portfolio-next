@@ -2,10 +2,12 @@ import { Html, Head, Main, NextScript } from "next/document";
 
 export default function Document() {
   return (
-    <Html className="bg-primary-dark w-screen">
+    <Html className="bg-surface-background w-screen text-text-primary">
       <Head>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" />
         <link
-          href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap"
+          href="https://fonts.googleapis.com/css2?family=Heebo:wght@100;400;500;600;700&family=Kalam&display=swap"
           rel="stylesheet"
         />
 

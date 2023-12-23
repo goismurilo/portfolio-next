@@ -1,5 +1,5 @@
 import Image from "next/image";
-import xp from "../../src/images/experience.png";
+import xp from "../../assets/images/experience.png";
 
 export default function Experience() {
   return (
