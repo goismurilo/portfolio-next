@@ -3,7 +3,7 @@ import Image from "next/image";
 import ExampleImageGirl from "../../assets/images/example-image-girl.svg";
 import { Button } from "../Button";
 import { ClipboardDocumentCheckIcon } from "@heroicons/react/24/outline";
-import { stacks } from "../../utils/stacks";
+import { mainStacks } from "../../utils/stacks";
 
 export default function AboutMe() {
   return (
@@ -19,7 +19,7 @@ export default function AboutMe() {
       <div className="flex flex-col gap-8">
         <div className="flex flex-col gap-8">
           <div className="flex gap-6">
-            {stacks.map((item, key) => {
+            {mainStacks.map((item, key) => {
               return (
                 <Image
                   key={key}
@@ -34,7 +34,7 @@ export default function AboutMe() {
             <span className="section-table text-secondary-color">About me</span>
             <h2>
               I’m a passionate software developer looking for my first
-              international oppotunity
+              international opportunity
             </h2>
             <p className="text-text-secondary">
               {`Beyond coding, I'm a coffee enthusiast, a cat lover, and a
