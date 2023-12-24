@@ -10,7 +10,7 @@ export default function Footer() {
         href="https://www.linkedin.com/in/goismurilo/"
         target="_blank"
         rel="noopener noreferrer"
-        className="text-white hover:text-primary-light flex items-center"
+        className="text-text-secondary hover:text-primary-color-400 flex items-center"
       >
         <p>Desenvolvido por </p>
         <span>
