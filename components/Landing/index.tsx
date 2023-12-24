@@ -33,7 +33,10 @@ export default function Landing() {
   }, []);
 
   return (
-    <div className="relative mx-auto max-w-7xl p-24 pt-24 md:py-24 md:px-28 md:pt-40 flex flex-col items-center gap-6 lg:flex-row-reverse lg:gap-36 ">
+    <div
+      id="Home"
+      className="relative mx-auto max-w-7xl p-24 pt-24 md:py-24 md:px-28 md:pt-40 flex flex-col items-center gap-6 lg:flex-row-reverse lg:gap-36 "
+    >
       <Image
         src={ExampleImage}
         className="md:w-96 md:h-96"
@@ -60,7 +63,7 @@ export default function Landing() {
 
           <div className="relative">
             <Button className="w-44 flex gap-2">
-              <p className="font-bold">My Resume</p>
+              <p className="font-bold">Get in touch</p>
               <ArrowRightIcon className="w-6 h-6" />
 
               <Image

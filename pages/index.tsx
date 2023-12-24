@@ -7,7 +7,7 @@ import Landing from "../components/Landing";
 import Projects from "../components/Projects";
 import Experience from "../components/Experience";
 import Contact from "../components/Contact";
-// import styles from '../styles/Home.module.css'
+import AboutMe from "../components/AboutMe";
 
 const Home: NextPage = () => {
   return (
@@ -19,6 +19,7 @@ const Home: NextPage = () => {
       </Head>
       <Navbar />
       <Landing />
+      <AboutMe />
       {/* //TODO
       <AddExperinceInNumvbers /> */}
       <Projects />
