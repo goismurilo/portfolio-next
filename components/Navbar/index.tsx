@@ -13,7 +13,7 @@ export default function Example() {
   const [itemSelected, setItemSelected] = useState("Home");
 
   return (
-    <header className="fixed w-full bg-surface-background">
+    <header className="fixed w-full z-50 bg-surface-background shadow-lg lg:shadow-[#00000040]">
       <nav
         className="mx-auto flex max-w-7xl items-center justify-between p-6 lg:px-8"
         aria-label="Global"
@@ -24,8 +24,8 @@ export default function Example() {
             <Image
               src="/logo-with-name.svg"
               alt="goisMurilo Logo"
-              width={180}
-              height={80}
+              width={120}
+              height={60}
             />
           </a>
         </div>
