@@ -10,7 +10,7 @@ import Contact from "./components/Contact";
 export const metadata: Metadata = {
   title: "Murilo Gois",
   description: "Portfolio de Murilo Gois",
-  icons: "../public/favicon-32x32.png",
+  icons: "/public/favicon-32x32.png",
 };
 
 export default function Page() {

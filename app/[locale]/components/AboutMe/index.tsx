@@ -1,13 +1,16 @@
 import Image from "next/image";
+import Link from "next/link";
+import { useTranslations } from "next-intl";
+
+import { ClipboardDocumentCheckIcon } from "@heroicons/react/24/outline";
 
 import ExampleImageGirl from "../../assets/images/example-image-girl.svg";
 import { Button } from "../Button";
-import { ClipboardDocumentCheckIcon } from "@heroicons/react/24/outline";
-import { mainStacks } from "../../utils/stacks";
-import Link from "next/link";
 import { profile } from "../../utils/profile";
+import { mainStacks } from "../../utils/stacks";
 
 export default function AboutMe() {
+  const t = useTranslations("AboutMe");
   return (
     <div
       id="about"
@@ -33,23 +36,34 @@ export default function AboutMe() {
             })}
           </div>
           <div className="flex flex-col gap-4">
-            <span className="section-table text-secondary-color">About me</span>
+            <span className="section-table text-secondary-color">
+              {
+                //? i18n: About me
+                t("section")
+              }
+            </span>
             <h2>
-              I’m a passionate software developer looking for my first
-              international opportunity
+              {
+                //? i18n: I’m a passionate software developer looking for my first international opportunity
+                t("title")
+              }
             </h2>
             <p className="text-text-secondary">
-              {`Beyond coding, I'm a coffee enthusiast, a cat lover, and a
-              self-taught artist who enjoys spending my free time doodling. I am
-              currently seeking opportunities to bring my skills and enthusiasm
-              to a tech company in the United States or Europe and am excited
-              about the prospect of relocating to pursue new challenges.`}
+              {
+                //? i18n: Beyond coding, I'm a coffee enthusiast, a cat lover, and a self-taught artist who enjoys spending my free time doodling. I am currently seeking opportunities to bring my skills and enthusiasm to a tech company in the United States or Europe and am excited about the prospect of relocating to pursue new challenges.
+                t("subtitle")
+              }
             </p>
           </div>
           <Link href={profile.cv}>
-            <Button className="w-44">
+            <Button className="w-48">
               <ClipboardDocumentCheckIcon className="w-6 h-6" />
-              <p className="font-bold">My Resume</p>
+              <p className="font-bold">
+                {
+                  //? i18n: About me
+                  t("button")
+                }
+              </p>
             </Button>
           </Link>
         </div>

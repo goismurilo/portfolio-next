@@ -8,5 +8,13 @@
 
     "button1": "Meu Currículo",
     "button2": "Falar comigo"
+  },
+
+  "AboutMe": {
+    "section": "Sobre mim",
+    "title": "Sou um desenvolvedor de software apaixonado em busca novos grandes desafios",
+    "subtitle": "Além da programação, sou um entusiasta do café, um amante da música e um artista autodidata que gosta de passar meu tempo livre rabiscando. Atualmente estou buscando oportunidades para melhoras minhas habilidades e enfrentar novos desafios",
+
+    "button": "Meu Currículo"
   }
 }
