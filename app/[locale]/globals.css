@@ -1,5 +1,11 @@
+@import url("https://fonts.googleapis.com/css2?family=Heebo:wght@100;400;500;600;700&family=Kalam&display=swap");
+
 @tailwind base;
 @layer base {
+  html {
+    @apply bg-surface-background text-text-primary font-sans;
+  }
+
   h1 {
     @apply text-[32px] font-medium;
   }
@@ -17,11 +23,11 @@
   }
 
   .hs {
-    @apply text-4xl !font-cursive;
+    @apply text-4xl font-cursive;
   }
 
   .section-table {
-    @apply text-base !font-cursive;
+    @apply text-base font-cursive;
   }
 }
 
