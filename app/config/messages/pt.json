@@ -40,5 +40,18 @@
     "title": "Dê uma olhada nos meus projetos em destaque",
 
     "button": "Ver tudo"
+  },
+
+  "Contacts": {
+    "section": "Contatos",
+    "title": "Gostou do meu perfil? Vamos trabalhar juntos",
+    "paragraph": "Estou sempre pronto para bater um papo. Envie um e-mail para {email} ou fale comigo em minhas redes sociais.",
+
+    "form": {
+      "name": "Nome",
+      "message": "Sua mensagem"
+    },
+
+    "button": "Me envie uma msg"
   }
 }

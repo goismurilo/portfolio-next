@@ -40,5 +40,18 @@
     "title": "Take a look at my highlighted projects",
 
     "button": "See all"
+  },
+
+  "Contacts": {
+    "section": "Contacts",
+    "title": "Enjoyed my work? Let’s work together",
+    "paragraph": "I’m always up for a chat. Pop me an email at <span>{email}</span> or give me a shout on social media.",
+
+    "form": {
+      "name": "Name",
+      "message": "Your message"
+    },
+
+    "button": "Send me a message"
   }
 }
