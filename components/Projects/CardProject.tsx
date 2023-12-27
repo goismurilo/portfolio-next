@@ -7,7 +7,7 @@ interface ICardProjectProps {
 
 export const CardProject = ({ project }: ICardProjectProps) => {
   return (
-    <div className="flex flex-col gap-4 w-full p-4 bg-surface-primary rounded-2xl">
+    <div className="flex flex-col gap-4 w-full p-4 bg-surface-primary rounded-2xl cursor-pointer">
       <Image
         src={project.thumb}
         alt="Image Project"

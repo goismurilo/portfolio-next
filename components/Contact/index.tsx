@@ -32,7 +32,7 @@ export default function Contact() {
   return (
     <div
       id="contacts"
-      className="flex flex-col lg:flex-row mx-auto max-w-7xl gap-12 lg:gap-32 py-12 px-6 lg:p-16 bg-surface-primary rounded-2xl"
+      className="flex flex-col lg:flex-row mx-auto max-w-7xl gap-12 lg:gap-32 py-12 px-6 lg:p-16 bg-surface-primary lg:rounded-2xl"
     >
       <div className="flex flex-col gap-10">
         <Image src={AvatarImage} width={160} height={160} alt="Profile Image" />
@@ -73,7 +73,7 @@ export default function Contact() {
             className="px-4 py-3 rounded-lg accent-secondary-color caret-secondary-color focus:border-secondary-color bg-surface-background text-text-secondary"
           />
           <input
-            type="text"
+            type="email"
             placeholder="Email"
             className="px-4 py-3 rounded-lg accent-secondary-color focus:border-secondary-color bg-surface-background text-text-secondary"
           />

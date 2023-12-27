@@ -10,11 +10,25 @@ import ArrowCurved from "../../assets/icons/arrow-curved.svg";
 
 import { Button } from "../Button";
 import { useEffect, useRef, useState } from "react";
+import Link from "next/link";
+import { profile } from "../../utils/profile";
 
 export default function Landing() {
   const [position, setPosition] = useState({ bottom: 0, left: 0 });
   const referenceElement = useRef(null);
   const targetElement = useRef(null);
+
+  function scrollToID(id: string) {
+    const element = document.getElementById(id);
+
+    if (element) {
+      window.scroll({
+        behavior: "smooth",
+        left: 0,
+        top: element.offsetTop,
+      });
+    }
+  }
 
   useEffect(() => {
     if (referenceElement.current && targetElement.current) {
@@ -56,13 +70,18 @@ export default function Landing() {
           </p>
         </div>
         <div className="flex gap-2">
-          <Button buttonType="secondary" className="w-44 flex gap-2">
-            <ClipboardDocumentCheckIcon className="w-6 h-6" />
-            <p className="font-bold">My Resume</p>
-          </Button>
+          <Link href={profile.cv}>
+            <Button buttonType="secondary" className="w-44 flex gap-2">
+              <ClipboardDocumentCheckIcon className="w-6 h-6" />
+              <p className="font-bold">My Resume</p>
+            </Button>
+          </Link>
 
           <div className="relative">
-            <Button className="w-44 flex gap-2">
+            <Button
+              className="w-44 flex gap-2"
+              onClick={() => scrollToID("contacts")}
+            >
               <p className="font-bold">Get in touch</p>
               <ArrowRightIcon className="w-6 h-6" />
 

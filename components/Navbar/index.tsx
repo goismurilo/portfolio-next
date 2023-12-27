@@ -52,7 +52,7 @@ export default function Example() {
                   className="data-[selected=true]:font-semibold"
                 >
                   {item.name !== "Theme" && item.name}
-                  {item.name === "Theme" && <SunIcon className="w-6" />}
+                  {item.name === "Theme" && <SunIcon className="w-6 h-6" />}
                 </a>
               );
             })}
@@ -97,6 +97,7 @@ export default function Example() {
                         key={key}
                         href={item.href}
                         className="-mx-3 block rounded-lg px-3 py-2 text-base leading-7"
+                        onClick={() => setMobileMenuOpen(false)}
                       >
                         {item.name !== "Theme" && item.name}
                         {item.name === "Theme" && <SunIcon className="w-6" />}

@@ -5,4 +5,5 @@ export const profile = {
   github: "https://github.com/goismurilo",
   linkedIn: "https://www.linkedin.com/in/goismurilo/",
   instagram: "https://www.instagram.com/goismurilo/",
+  cv: "https://drive.google.com/uc?export=download&id=1zphMALHDF8Rn3JXj9nH94lUHfWsBOjrS",
 };
