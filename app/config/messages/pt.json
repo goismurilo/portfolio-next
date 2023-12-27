@@ -16,5 +16,12 @@
     "subtitle": "Além da programação, sou um entusiasta do café, um amante da música e um artista autodidata que gosta de passar meu tempo livre rabiscando. Atualmente estou buscando oportunidades para melhoras minhas habilidades e enfrentar novos desafios",
 
     "button": "Meu Currículo"
+  },
+
+  "Projects": {
+    "section": "Projetos",
+    "title": "Dê uma olhada nos meus projetos em destaque",
+
+    "button": "Ver tudo"
   }
 }

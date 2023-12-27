@@ -66,7 +66,7 @@ export default function Landing() {
         <h1 className="bg-gradient-to-r font-cursive from-[#9955E8]  to-secondary-color inline-block text-transparent bg-clip-text text-5xl">
           {
             //? i18n: Hi, I'm {username}
-            t("title", { username: profile.name })
+            t("title", { username: profile.username })
           }
         </h1>
         <div className="flex flex-col gap-6">

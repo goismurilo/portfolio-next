@@ -31,6 +31,7 @@ export const stacks: IStackT = {
 export const mainStacks: Array<IStack> = [
   stacks.angular,
   stacks.javascript,
+  stacks.typescript,
   stacks.react,
   stacks.tailwind,
 ];
