@@ -39,7 +39,25 @@
     "section": "Projetos",
     "title": "Dê uma olhada nos meus projetos em destaque",
 
-    "button": "Ver tudo"
+    "button": "Ver tudo",
+
+    "jobs": {
+      "AcessaBR": {
+        "name": "AcessaBR",
+        "resume": "Projeto que lista os lugares públicos mais populares da cidade de Eunápolis-BA e cataloga os itens de mobilidade urbana que existem lá.",
+        "date": "Nov - Dec 2022"
+      },
+      "DigitalCast": {
+        "name": "DigitalCast",
+        "resume": " O projeto é uma aplicação React Native feita a partir da plataforma Expo. É um player que executa algumas previas de músicas do Spotfy.",
+        "date": "Jan - Fev 2022"
+      },
+      "MancheteFlix": {
+        "name": "MancheteFlix",
+        "resume": "Esse projeto tem o intuito de revitalizar a antiga TV Manchete e simular como seria um streaming de video da nos dias atuais.",
+        "date": "Jan 2022"
+      }
+    }
   },
 
   "Contacts": {

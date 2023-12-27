@@ -1,11 +1,15 @@
 import Image from "next/image";
 import { IProject } from "../../utils/projectsList";
+import { useTranslations } from "next-intl";
 
 interface ICardProjectProps {
   project: IProject;
 }
 
 export const CardProject = ({ project }: ICardProjectProps) => {
+  const t = useTranslations(`Projects.jobs.${project.name}`);
+
+  console.log(t);
   return (
     <div className="flex flex-col gap-4 w-full p-4 bg-surface-primary rounded-2xl cursor-pointer">
       <Image
@@ -14,7 +18,7 @@ export const CardProject = ({ project }: ICardProjectProps) => {
         className="rounded-tl-2xl rounded-tr-2xl"
       />
       <div className="flex justify-between">
-        <p className="text-text-secondary">{project.date}</p>
+        <p className="text-text-secondary">{t("date")}</p>
         <div className="flex gap-4">
           {project.stacks.map((stack, key) => {
             return (
@@ -30,7 +34,7 @@ export const CardProject = ({ project }: ICardProjectProps) => {
       </div>
       <div className="flex flex-col gap-2">
         <span className="font-bold text-2xl">{project.name}</span>
-        <p className="">{project.resume}</p>
+        <p className="">{t("resume")}</p>
       </div>
     </div>
   );

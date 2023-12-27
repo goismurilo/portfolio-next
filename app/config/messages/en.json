@@ -39,7 +39,25 @@
     "section": "Projects",
     "title": "Take a look at my highlighted projects",
 
-    "button": "See all"
+    "button": "See all",
+
+    "jobs": {
+      "AcessaBR": {
+        "name": "AcessaBR",
+        "resume": "Project that lists the most popular public places in the city of Eunápolis-BA and catalogs the urban mobility items that exist there.",
+        "date": "Nov - Dec 2022"
+      },
+      "DigitalCast": {
+        "name": "DigitalCast",
+        "resume": "The project is a React Native application made using the Expo platform. It's a player that plays some Spotify music previews.",
+        "date": "Jan - Fev 2022"
+      },
+      "MancheteFlix": {
+        "name": "MancheteFlix",
+        "resume": "This project aims to revitalize the old TV Manchete and simulate what streaming video would be like today.",
+        "date": "Jan 2022"
+      }
+    }
   },
 
   "Contacts": {

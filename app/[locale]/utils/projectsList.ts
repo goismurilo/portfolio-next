@@ -39,7 +39,7 @@ export const projects: Array<IProject> = [
     name: "MancheteFlix",
     thumb: manchete,
     resume:
-      "Esse projeto tem o intuito de revitalizar a antiga TV Manchete esimular como seria um streaming de video da nos dias atuais.",
+      "Esse projeto tem o intuito de revitalizar a antiga TV Manchete e simular como seria um streaming de video da nos dias atuais.",
     stacks: [stacks.javascript, stacks.css, stacks.html],
     repository: "https://github.com/goismurilo/clone-netflix",
     deploy: "",
