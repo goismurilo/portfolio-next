@@ -1,58 +1,92 @@
-import { FaWhatsapp, FaGithub, FaLinkedin } from 'react-icons/fa';
-import { HiOutlineMail } from 'react-icons/hi';
+import Image from "next/image";
+
+import AvatarImage from "../../assets/images/avatar.svg";
+import { FaWhatsapp, FaGithub, FaLinkedin, FaInstagram } from "react-icons/fa";
+import { profile } from "../../utils/profile";
+import { Button } from "../Button";
+import { ArrowRightIcon } from "@heroicons/react/24/outline";
 
 export default function Contact() {
+  const contacts = [
+    {
+      socialNetwork: "Github",
+      icon: <FaGithub className="w-6 h-6" />,
+      href: profile.github,
+    },
+    {
+      socialNetwork: "Linkedin",
+      icon: <FaLinkedin className="w-6 h-6" />,
+      href: profile.linkedIn,
+    },
+    {
+      socialNetwork: "Instagram",
+      icon: <FaInstagram className="w-6 h-6" />,
+      href: profile.instagram,
+    },
+    {
+      socialNetwork: "Whatsapp",
+      icon: <FaWhatsapp className="w-6 h-6" />,
+      href: profile.whatsapp,
+    },
+  ];
+  return (
+    <div
+      id="contacts"
+      className="flex flex-col lg:flex-row mx-auto max-w-7xl gap-12 lg:gap-32 py-12 px-6 lg:p-16 bg-surface-primary lg:rounded-2xl"
+    >
+      <div className="flex flex-col gap-10">
+        <Image src={AvatarImage} width={160} height={160} alt="Profile Image" />
+        <div className="flex flex-col gap-4">
+          <div>
+            <span className="font-cursive text-secondary-color">Contact</span>
+            <h2>Enjoyed my work? Let’s work together</h2>
+          </div>
+          <p>
+            I’m always up for a chat. Pop me an email at
+            <span className="text-secondary-color underline">
+              {" "}
+              {profile.email}
+            </span>{" "}
+            or give me a shout on social media.
+          </p>
+          <div className="flex gap-2">
+            {contacts.map((contact, key) => {
+              return (
+                <a
+                  key={key}
+                  href={contact.href}
+                  className="flex cursor-pointer p-3 bg-surface-secondary w-12 h-12 items-center justify-center rounded-lg"
+                >
+                  {contact.icon}
+                </a>
+              );
+            })}
+          </div>
+        </div>
+      </div>
 
-    return (
-        <div id="contact" className="bg-primary-medium pb-10 px-4">
-            <h1 className="text-center font-bold text-4xl text-white py-8">Contato</h1>
-            <div className="flex flex-wrap lg:justify-center">
-                <a className="p-4 w-full md:w-auto hover:bg-primary-light rounded-md" href='https://api.whatsapp.com/send?phone=5573999768043' target="_blank" rel="noopener noreferrer">
-                    <div className='flex flex-wrap lg:justify-start  '>
-                        <div className='bg-primary-dark rounded-full w-12 h-12 flex justify-center items-center'>
-                            <FaWhatsapp className='w-8 h-8' color='#9A77CF' />
-                        </div>
-                        <div className='px-2'>
-                            <p className='text-white font-extralight text-xs'>Whatsapp</p>
-                            <strong className='text-white font-semibold text-2xl'>(73) 99976-8043</strong>
-                        </div>
-                    </div>
-                </a>
-                <a className="p-4 w-full md:w-auto hover:bg-primary-light rounded-md" href='mailto:murilodevs@gmail.com' target="_blank" rel="noopener noreferrer">
-                    <div className='flex flex-wrap justify-start'>
-                        <div className='bg-primary-dark rounded-full w-12 h-12 flex justify-center items-center'>
-                            <HiOutlineMail className='w-8 h-8' color='#9A77CF' />
-                        </div>
-                        <div className='px-2'>
-                            <p className='text-white font-extralight text-xs'>Email</p>
-                            <strong className='text-white font-semibold text-2xl'>murilodevs@gmail.com</strong>
-                        </div>
-                    </div>
-                </a>
-                <a className="p-4 w-full md:w-auto hover:bg-primary-light rounded-md" href='https://github.com/goismurilo' target="_blank" rel="noopener noreferrer">
-                    <div className='flex flex-wrap justify-start '>
-                        <div className='bg-primary-dark rounded-full w-12 h-12 flex justify-center items-center'>
-                            <FaGithub className='w-8 h-8' color='#9A77CF' />
-                        </div>
-                        <div className='px-2 hover:bg-primary-light'>
-                            <p className='text-white font-extralight text-xs'>GitHub</p>
-                            <strong className='text-white font-semibold text-2xl'>/goismurilo</strong>
-                        </div>
-                    </div>
-                </a>
-                <a className="p-4 w-full md:w-auto hover:bg-primary-light rounded-md" href='https://www.linkedin.com/in/goismurilo/' target="_blank" rel="noopener noreferrer">
-                    <div className='flex flex-wrap justify-start '>
-                        <div className='bg-primary-dark rounded-full w-12 h-12 flex justify-center items-center'>
-                            <FaLinkedin className='w-8 h-8' color='#9A77CF' />
-                        </div>
-                        <div className='px-2 hover:bg-primary-light'>
-                            <p className='text-white font-extralight text-xs'>LinkedIn</p>
-                            <strong className='text-white font-semibold text-2xl'>/in/goismurilo</strong>
-                        </div>
-                    </div>
-                </a>
-            </div>
-        </div >
-    );
-    // TODO: Create components for contacts items
+      <div className="flex flex-col gap-8 w-full">
+        <form className="flex flex-col gap-4 h-full" action="">
+          <input
+            type="text"
+            placeholder="Name"
+            className="px-4 py-3 rounded-lg accent-secondary-color caret-secondary-color focus:border-secondary-color bg-surface-background text-text-secondary"
+          />
+          <input
+            type="email"
+            placeholder="Email"
+            className="px-4 py-3 rounded-lg accent-secondary-color focus:border-secondary-color bg-surface-background text-text-secondary"
+          />
+          <textarea
+            placeholder="Your message"
+            className="min-h-40 h-full px-4 py-3 rounded-lg focus:border-secondary-color bg-surface-background text-text-secondary"
+          />
+        </form>
+        <Button className="flex gap-2 max-w-60">
+          <p className="font-bold">Send me a message</p>
+          <ArrowRightIcon className="w-6 h-6" />
+        </Button>
+      </div>
+    </div>
+  );
 }
