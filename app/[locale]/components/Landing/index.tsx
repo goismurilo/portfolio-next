@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import { useTranslations } from "next-intl";
 
 import {
   ClipboardDocumentCheckIcon,
@@ -16,6 +17,8 @@ import Link from "next/link";
 import { profile } from "../../utils/profile";
 
 export default function Landing() {
+  const t = useTranslations("Landing");
+
   const [position, setPosition] = useState({ bottom: 0, left: 0 });
   const referenceElement = useRef(null);
   const targetElement = useRef(null);
@@ -61,36 +64,56 @@ export default function Landing() {
       />
       <div className="flex flex-col gap-6 md:gap-8">
         <h1 className="bg-gradient-to-r font-cursive from-[#9955E8]  to-secondary-color inline-block text-transparent bg-clip-text text-5xl">
-          {`Hi, I'm Murilo`}
+          {
+            //? i18n: Hi, I'm {username}
+            t("title", { username: profile.name })
+          }
         </h1>
         <div className="flex flex-col gap-6">
-          <h2>Full-stack developer and innovation enthusiast</h2>
+          <h2>
+            {
+              //? i18n: Full-stack developer and innovation enthusiast
+              t("subtitle")
+            }
+          </h2>
           <p>
-            Over 4 years of experience in the tech industry. I specialize in
-            building innovative web and mobile applications using technologies
-            such as React, React Native, and Node.js.
+            {
+              //? i18n: Over 3 years of experience in the tech industry. I specialize in building innovative web and mobile applications using technologies such as React, React Native e Angular.
+              t("paragraph")
+            }
           </p>
         </div>
         <div className="flex gap-2">
           <Link href={profile.cv}>
-            <Button buttonType="secondary" className="w-44 flex gap-2">
+            <Button buttonType="secondary" className="w-48 flex gap-2">
               <ClipboardDocumentCheckIcon className="w-6 h-6" />
-              <p className="font-bold">My Resume</p>
+              <p className="font-bold">
+                {
+                  //? i18n: My Resume
+                  t("button1")
+                }
+              </p>
             </Button>
           </Link>
 
           <div className="relative">
             <Button
-              className="w-44 flex gap-2"
+              className="w-48 flex gap-2"
               onClick={() => scrollToID("contacts")}
             >
-              <p className="font-bold">Get in touch</p>
+              <p className="font-bold">
+                {
+                  //? i18n: Get in touch
+                  t("button2")
+                }
+              </p>
               <ArrowRightIcon className="w-6 h-6" />
 
               <Image
                 src={ArrowCurved}
                 className="absolute -bottom-20 left-0 lg:hidden rotate-[130deg]"
-                alt="Pequeno gráfico de experiencias"
+                // TODO: Translate and add description
+                alt=""
               />
             </Button>
           </div>
@@ -100,16 +123,10 @@ export default function Landing() {
         src={ArrowCurved}
         ref={targetElement}
         className="hidden lg:flex absolute rotate-[130deg]"
-        alt="Pequeno gráfico de experiencias"
+        // TODO: Translate and add description
+        alt=""
         style={{ top: position.bottom, right: position.left }}
       />
     </div>
   );
-}
-
-{
-  /* Eu sou desenvolvedor FullStack, atualmente trabalho com C#
-principalmente e curso o último semestre da faculdade de ADS(IFBA).
-Seja muito bem-vindo e qualquer dúvida ou sugestão me mande mensagem
-nas minhas redes sociais. Abraços! */
 }

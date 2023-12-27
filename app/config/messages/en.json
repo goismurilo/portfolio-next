@@ -2,6 +2,11 @@
   "NavBar": {},
 
   "Landing": {
-    "salutation": "Hi, I'm Murilo"
+    "title": "Hi, I'm {username}",
+    "subtitle": "Full-stack developer and innovation enthusiast",
+    "paragraph": "Over 3 years of experience in the tech industry. I specialize in building innovative web and mobile applications using technologies such as React, React Native e Angular.",
+
+    "button1": "My Resume",
+    "button2": "Get in Touch"
   }
 }
