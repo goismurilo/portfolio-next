@@ -53,5 +53,10 @@
     },
 
     "button": "Me envie uma msg"
+  },
+
+  "Footer": {
+    "rights": "Todos os direitos reservados",
+    "developer": "Desenvolvido por"
   }
 }
