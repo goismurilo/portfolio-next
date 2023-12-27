@@ -3,6 +3,7 @@ import Footer from "./components/Footer";
 import Navbar from "./components/Navbar";
 
 import "./globals.css";
+import { NextIntlClientProvider, useMessages } from "next-intl";
 
 const locale = ["en", "pt"];
 
@@ -17,13 +18,17 @@ export default function RootLayout({
     notFound();
   }
 
+  const messages = useMessages();
+
   return (
     <html lang={locale}>
       <head></head>
       <body>
-        <Navbar />
-        {children}
-        <Footer />
+        <NextIntlClientProvider locale={locale} messages={messages}>
+          <Navbar />
+          {children}
+          <Footer />
+        </NextIntlClientProvider>
       </body>
     </html>
   );

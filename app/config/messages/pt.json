@@ -1,5 +1,22 @@
 {
-  "NavBar": {},
+  "NavBar": {
+    "home": {
+      "name": "Home",
+      "href": "#"
+    },
+    "about": {
+      "name": "Sobre",
+      "href": "#about"
+    },
+    "projects": {
+      "name": "Projetos",
+      "href": "#projects"
+    },
+    "contacts": {
+      "name": "Contatos",
+      "href": "#contacts"
+    }
+  },
 
   "Landing": {
     "title": "Olá, Eu sou o {username}",

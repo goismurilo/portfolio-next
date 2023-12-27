@@ -1,6 +1,4 @@
 import { Metadata } from "next";
-import { NextIntlClientProvider, useMessages } from "next-intl";
-import { pick } from "lodash";
 
 import Landing from "./components/Landing";
 import AboutMe from "./components/AboutMe";
@@ -14,13 +12,9 @@ export const metadata: Metadata = {
 };
 
 export default function Page() {
-  const messages = useMessages();
-
   return (
     <>
-      <NextIntlClientProvider messages={pick(messages, "Landing")}>
-        <Landing />
-      </NextIntlClientProvider>
+      <Landing />
       <AboutMe />
       <Projects />
       <Contact />

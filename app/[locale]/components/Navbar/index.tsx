@@ -1,6 +1,8 @@
 "use client";
 
 import { useState } from "react";
+import { useTranslations } from "next-intl";
+
 import { Dialog, Popover } from "@headlessui/react";
 import { Bars3Icon, XMarkIcon, SunIcon } from "@heroicons/react/24/outline";
 import Image from "next/image";
@@ -15,6 +17,7 @@ function classNames(...classes: string[]) {
 export default function Example() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [itemSelected, setItemSelected] = useState("Home");
+  const t = useTranslations("NavBar");
 
   const pathname = usePathname();
   const params = useParams();
@@ -53,12 +56,12 @@ export default function Example() {
               return (
                 <a
                   key={key}
-                  href={item.href}
-                  onClick={() => setItemSelected(item.name)}
-                  data-selected={itemSelected === item.name}
+                  href={t(`${item}.href`)}
+                  onClick={() => setItemSelected(t(`${item}.name`))}
+                  data-selected={itemSelected === t(`${item}.name`)}
                   className="data-[selected=true]:font-semibold"
                 >
-                  {item.name}
+                  {t(`${item}.name`)}
                 </a>
               );
             })}
@@ -100,21 +103,18 @@ export default function Example() {
           <div className="mt-6 flow-root">
             <div className="-my-6 divide-y divide-text-secondary">
               <div className="space-y-2 py-6">
-                {menuItens
-                  .map((item, key) => {
-                    return (
-                      <a
-                        key={key}
-                        href={item.href}
-                        className="-mx-3 block rounded-lg px-3 py-2 text-base leading-7"
-                        onClick={() => setMobileMenuOpen(false)}
-                      >
-                        {item.name !== "Theme" && item.name}
-                        {item.name === "Theme" && <SunIcon className="w-6" />}
-                      </a>
-                    );
-                  })
-                  .filter((item, key) => key < 4)}
+                {menuItens.map((item, key) => {
+                  return (
+                    <a
+                      key={key}
+                      href={t(`${item}.href`)}
+                      className="-mx-3 block rounded-lg px-3 py-2 text-base leading-7"
+                      onClick={() => setMobileMenuOpen(false)}
+                    >
+                      {t(`${item}.name`)}
+                    </a>
+                  );
+                })}
               </div>
               <div className="py-6 flex gap-4 text-base font-semibold leading-7">
                 <Link
