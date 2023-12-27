@@ -1,3 +1,5 @@
+"use client";
+
 import { useState } from "react";
 import { Dialog, Popover } from "@headlessui/react";
 import { Bars3Icon, XMarkIcon, SunIcon } from "@heroicons/react/24/outline";
