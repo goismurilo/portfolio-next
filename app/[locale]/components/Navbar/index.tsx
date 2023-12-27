@@ -5,6 +5,8 @@ import { Dialog, Popover } from "@headlessui/react";
 import { Bars3Icon, XMarkIcon, SunIcon } from "@heroicons/react/24/outline";
 import Image from "next/image";
 import { menuItens } from "../../utils/menuItens";
+import { Link, usePathname } from "../../../../navigation";
+import { useParams } from "next/navigation";
 
 function classNames(...classes: string[]) {
   return classes.filter(Boolean).join(" ");
@@ -13,6 +15,9 @@ function classNames(...classes: string[]) {
 export default function Example() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [itemSelected, setItemSelected] = useState("Home");
+
+  const pathname = usePathname();
+  const params = useParams();
 
   return (
     <header className="fixed w-full z-50 bg-surface-background shadow-lg lg:shadow-[#00000040]">
@@ -53,11 +58,14 @@ export default function Example() {
                   data-selected={itemSelected === item.name}
                   className="data-[selected=true]:font-semibold"
                 >
-                  {item.name !== "Theme" && item.name}
-                  {item.name === "Theme" && <SunIcon className="w-6 h-6" />}
+                  {item.name}
                 </a>
               );
             })}
+            <Link href={pathname} locale={params.locale === "pt" ? "en" : "pt"}>
+              {params.locale === "pt" ? "EN" : "PT"}
+            </Link>
+            <SunIcon className="w-6 h-6" />
           </Popover.Group>
         </div>
       </nav>
@@ -109,12 +117,13 @@ export default function Example() {
                   .filter((item, key) => key < 4)}
               </div>
               <div className="py-6 flex gap-4 text-base font-semibold leading-7">
-                <a
-                  href="#"
+                <Link
+                  href={pathname}
+                  locale={params.locale === "pt" ? "en" : "pt"}
                   className="w-12 h-12 rounded-lg p-3 bg-surface-secondary cursor-pointer items-center flex"
                 >
-                  EN
-                </a>
+                  {params.locale === "pt" ? "EN" : "PT"}
+                </Link>
                 <a
                   href="#"
                   className="w-12 h-12 rounded-lg p-3 bg-surface-secondary cursor-pointer items-center flex"

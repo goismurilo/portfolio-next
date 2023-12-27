@@ -15,12 +15,4 @@ export const menuItens = [
     name: "Contacts",
     href: "#contacts",
   },
-  {
-    name: "EN",
-    href: "#",
-  },
-  {
-    name: "Theme",
-    href: "#",
-  },
 ];
