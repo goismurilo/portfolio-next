@@ -6,8 +6,8 @@ import { ClipboardDocumentCheckIcon } from "@heroicons/react/24/outline";
 
 import ExampleImageGirl from "../../assets/images/example-image-girl.svg";
 import { Button } from "../Button";
-import { profile } from "../../utils/profile";
-import { mainStacks } from "../../utils/stacks";
+import { profile } from "../../constants/profile";
+import { mainStacks } from "../../constants/stacks";
 
 export default function AboutMe() {
   const t = useTranslations("AboutMe");

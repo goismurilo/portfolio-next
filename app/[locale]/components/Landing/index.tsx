@@ -14,7 +14,7 @@ import ArrowCurved from "../../assets/icons/arrow-curved.svg";
 import { Button } from "../Button";
 import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
-import { profile } from "../../utils/profile";
+import { profile } from "../../constants/profile";
 
 export default function Landing() {
   const t = useTranslations("Landing");

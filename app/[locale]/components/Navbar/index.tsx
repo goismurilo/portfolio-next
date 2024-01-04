@@ -6,7 +6,7 @@ import { useTranslations } from "next-intl";
 import { Dialog, Popover } from "@headlessui/react";
 import { Bars3Icon, XMarkIcon, SunIcon } from "@heroicons/react/24/outline";
 import Image from "next/image";
-import { menuItens } from "../../utils/menuItens";
+import { menuItens } from "../../constants/menuItens";
 import { Link, usePathname } from "../../../../navigation";
 import { useParams } from "next/navigation";
 

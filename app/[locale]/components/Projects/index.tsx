@@ -1,7 +1,7 @@
 import { ArrowRightIcon } from "@heroicons/react/24/outline";
 import { Button } from "../Button";
 import { CardProject } from "./CardProject";
-import { projects } from "../../utils/projectsList";
+import { projects } from "../../constants/projectsList";
 import { useTranslations } from "next-intl";
 
 export default function Projects() {

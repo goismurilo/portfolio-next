@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { IProject } from "../../utils/projectsList";
+import { IProject } from "../../constants/projectsList";
 import { useTranslations } from "next-intl";
 
 interface ICardProjectProps {
@@ -9,7 +9,6 @@ interface ICardProjectProps {
 export const CardProject = ({ project }: ICardProjectProps) => {
   const t = useTranslations(`Projects.jobs.${project.name}`);
 
-  console.log(t);
   return (
     <div className="flex flex-col gap-4 w-full p-4 bg-surface-primary rounded-2xl cursor-pointer">
       <Image
