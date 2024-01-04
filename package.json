@@ -6,18 +6,22 @@
     "dev": "next dev -H ::",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "mail": "email dev"
   },
   "dependencies": {
     "@headlessui/react": "^1.5.0",
     "@heroicons/react": "^2.1.1",
-    "@sendgrid/mail": "^8.1.0",
+    "@react-email/components": "0.0.12",
+    "@react-email/render": "0.0.9-canary.2",
     "lodash": "^4.17.21",
     "next": "^14.0.4",
     "next-intl": "^3.4.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "react-email": "1.10.0",
     "react-icons": "^4.3.1",
+    "resend": "^2.1.0",
     "tailwind-variants": "^0.1.19"
   },
   "devDependencies": {

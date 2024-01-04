@@ -4,11 +4,13 @@ import Image from "next/image";
 
 import AvatarImage from "../../assets/images/avatar.svg";
 import { FaWhatsapp, FaGithub, FaLinkedin, FaInstagram } from "react-icons/fa";
-import { profile } from "../../utils/profile";
+import { profile } from "../../constants/profile";
 import { Button } from "../Button";
 import { ArrowRightIcon } from "@heroicons/react/24/outline";
 import { useTranslations } from "next-intl";
 import { useParams } from "next/navigation";
+import { useEffect, useState } from "react";
+import { MailForOwnerProps } from "../../../../emails/mail-for-owner";
 
 export default function Contact() {
   const contacts = [
@@ -34,8 +36,76 @@ export default function Contact() {
     },
   ];
 
+  const [isLoading, setIsLoading] = useState(false);
+
+  const [ipAddress, setIpAddress] = useState<string>("");
+  const [device, setDevice] = useState<string>("");
+
+  const [guestFullName, setGuestFullName] = useState<string>("");
+  const [guestEmail, setGuestEmail] = useState<string>("");
+  const [guestMessage, setGuestMessage] = useState<string>("");
+
   const t = useTranslations("Contacts");
   const params = useParams();
+
+  async function handleSendMailGuest() {
+    setIsLoading(true);
+    const data = {
+      guestFullName,
+      guestEmail,
+      ipAddress,
+    };
+    try {
+      const res = await fetch("/api/send-mail-guest", {
+        method: "POST",
+        headers: {
+          "content-type": "application/json",
+        },
+        body: JSON.stringify(data),
+      });
+      await sendMailOwner();
+    } catch (e) {
+      console.log("Contacts ::: handleSendMailGuest", e);
+    } finally {
+      setIsLoading(false);
+    }
+  }
+
+  async function sendMailOwner() {
+    const data: MailForOwnerProps = {
+      nameGuest: guestFullName,
+      device,
+      emailGuest: guestEmail,
+      // TODO: Add location based IP
+      location: "",
+      message: guestMessage,
+      ipAddress,
+    };
+
+    try {
+      const res = await fetch("/api/send-mail-owner", {
+        method: "POST",
+        headers: {
+          "content-type": "application/json",
+        },
+        body: JSON.stringify(data),
+      });
+    } catch (e) {
+      console.log("Contacts ::: sendMailOwner", e);
+    }
+  }
+
+  useEffect(() => {
+    fetch("/api/get-ip")
+      .then((response) => response.json())
+      .then((data) => {
+        setIpAddress(data.ip);
+        setDevice(data.device);
+      })
+      .catch((error) => {
+        console.error("Erro ao obter endereço IP ou Device:", error);
+      });
+  }, []);
 
   return (
     <div
@@ -102,31 +172,48 @@ export default function Contact() {
       </div>
 
       <div className="flex flex-col gap-8 w-full">
-        <form className="flex flex-col gap-4 h-full" action="">
+        <form
+          className="flex flex-col gap-4 h-full"
+          action={() => handleSendMailGuest()}
+        >
           <input
             type="text"
             placeholder={t("form.name")}
-            className="px-4 py-3 rounded-lg accent-secondary-color caret-secondary-color focus:border-secondary-color bg-surface-background text-text-secondary"
+            className="px-4 py-3 rounded-lg focus:outline-none focus:ring-2 ring-secondary-color accent-secondary-color bg-surface-background text-text-secondary"
+            required
+            value={guestFullName}
+            onChange={(e) => setGuestFullName(e.target.value)}
           />
           <input
             type="email"
             placeholder="Email"
-            className="px-4 py-3 rounded-lg accent-secondary-color focus:border-secondary-color bg-surface-background text-text-secondary"
+            className="px-4 py-3 rounded-lg focus:outline-none focus:ring-2 ring-secondary-color accent-secondary-color bg-surface-background text-text-secondary"
+            required
+            value={guestEmail}
+            onChange={(e) => setGuestEmail(e.target.value)}
           />
           <textarea
             placeholder={t("form.message")}
-            className="min-h-40 h-full px-4 py-3 rounded-lg focus:border-secondary-color bg-surface-background text-text-secondary"
+            className="min-h-40 h-full px-4 py-3 rounded-lg focus:outline-none focus:ring-2 ring-secondary-color accent-secondary-color bg-surface-background text-text-secondary"
+            required
+            value={guestMessage}
+            onChange={(e) => setGuestMessage(e.target.value)}
           />
+
+          <Button
+            type="submit"
+            className="flex gap-2 max-w-[14.6rem]"
+            disabled={isLoading}
+          >
+            <p className="font-bold">
+              {
+                //? i18n: Send me a message
+                t("button")
+              }
+            </p>
+            <ArrowRightIcon className="w-6 h-6" />
+          </Button>
         </form>
-        <Button className="flex gap-2 max-w-[14.6rem]">
-          <p className="font-bold">
-            {
-              //? i18n: Send me a message
-              t("button")
-            }
-          </p>
-          <ArrowRightIcon className="w-6 h-6" />
-        </Button>
       </div>
     </div>
   );
